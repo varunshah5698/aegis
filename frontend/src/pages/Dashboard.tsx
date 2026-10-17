@@ -482,7 +482,7 @@ export default function Dashboard() {
                     <p className="mb-2 text-[12.5px] font-medium text-ink-soft">Missing values by column (%)</p>
                     <ResponsiveContainer width="100%" height={170}>
                       <BarChart data={missingData} layout="vertical" margin={{ top: 0, right: 12, bottom: 0, left: 0 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" horizontal={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" horizontal={false} />
                         <XAxis type="number" tick={{ fontSize: 11 }} />
                         <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={120} />
                         <Tooltip content={<ChartTooltip />} />
@@ -556,7 +556,7 @@ export default function Dashboard() {
             ) : (
               <ResponsiveContainer width="100%" height={240}>
                 <BarChart data={kindData} layout="vertical" margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" horizontal={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" horizontal={false} />
                   <XAxis type="number" tick={{ fontSize: 11 }} />
                   <YAxis type="category" dataKey="kind" tick={{ fontSize: 11 }} width={140} />
                   <Tooltip content={<ChartTooltip />} />
@@ -700,11 +700,11 @@ export default function Dashboard() {
             ) : (
               <ResponsiveContainer width="100%" height={240}>
                 <BarChart data={flowData} layout="vertical" margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" horizontal={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" horizontal={false} />
                   <XAxis type="number" tickFormatter={compactNumber} tick={{ fontSize: 11 }} />
                   <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={104} />
                   <Tooltip content={<ChartTooltip />} />
-                  <Bar dataKey="value" fill="#191a23" radius={[0, 5, 5, 0]} />
+                  <Bar dataKey="value" fill="#FA9D72" radius={[0, 5, 5, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             )}
@@ -728,11 +728,11 @@ export default function Dashboard() {
                 <p className="mb-2 text-[12.5px] font-medium text-ink-soft">Hold-out metrics (0–1)</p>
                 <ResponsiveContainer width="100%" height={165}>
                   <BarChart data={mlMetrics} margin={{ top: 0, right: 8, bottom: 0, left: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" vertical={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
                     <XAxis dataKey="name" tick={{ fontSize: 10.5 }} />
                     <YAxis domain={[0, 1]} tick={{ fontSize: 10.5 }} width={34} />
                     <Tooltip content={<ChartTooltip />} />
-                    <Bar dataKey="value" fill="#b9ff66" stroke="#191a23" strokeWidth={1} radius={[5, 5, 0, 0]} />
+                    <Bar dataKey="value" fill="#FA9D72" stroke="#FA9D72" strokeWidth={1} radius={[5, 5, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -742,7 +742,7 @@ export default function Dashboard() {
                 <p className="mb-2 text-[12.5px] font-medium text-ink-soft">Flagged rows by anomaly score</p>
                 <ResponsiveContainer width="100%" height={150}>
                   <ScatterChart margin={{ top: 4, right: 12, bottom: 4, left: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" />
                     <XAxis dataKey="row_index" name="row" tick={{ fontSize: 10.5 }} />
                     <YAxis dataKey="score" name="score" tick={{ fontSize: 10.5 }} width={40} />
                     <ZAxis range={[40, 40]} />
@@ -780,11 +780,11 @@ export default function Dashboard() {
           ) : (
             <ResponsiveContainer width="100%" height={250}>
               <LineChart data={forecastData} margin={{ top: 4, right: 12, bottom: 4, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#191a2312" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
                 <XAxis dataKey="t" tick={{ fontSize: 11 }} minTickGap={28} />
                 <YAxis tickFormatter={compactNumber} tick={{ fontSize: 11 }} width={48} />
                 <Tooltip content={<ChartTooltip />} />
-                <Line type="monotone" dataKey="actual" stroke="#191a23" strokeWidth={2} dot={false} connectNulls />
+                <Line type="monotone" dataKey="actual" stroke="#FA9D72" strokeWidth={2} dot={false} connectNulls />
                 <Line type="monotone" dataKey="forecast" stroke="#2f8f83" strokeWidth={2} strokeDasharray="6 3" dot={false} connectNulls />
               </LineChart>
             </ResponsiveContainer>
