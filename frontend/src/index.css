@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   FinSentry design system — Positivus-inspired
+   base: white / #191A23 ink · accent: #B9FF66 lime · cards: 1px ink
+   border, 45px radius, hard offset shadow (no soft grey shadows)
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #191a23;
+  --color-ink-soft: #4a4b57;
+  --color-lime: #b9ff66;
+  --color-paper: #ffffff;
+  --color-mist: #f4f4f4;
+  --color-line: #191a23;
+  --color-danger: #d4453d;
+  --color-amber: #e8a33d;
+  --color-teal: #2f8f83;
+
+  --radius-card: 45px;
+  --radius-panel: 14px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  h1, h2, h3 {
+    @apply font-medium tracking-[-0.02em];
+  }
+}
+
+@layer components {
+  /* section wrapper — Positivus container rhythm */
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8;
+  }
+
+  /* hard-shadow card: 1px ink border + offset block shadow */
+  .card {
+    @apply rounded-[var(--radius-card)] border border-line bg-paper;
+    box-shadow: 0 5px 0 0 var(--color-line);
+  }
+  .card-flat {
+    @apply rounded-[var(--radius-card)] border border-line bg-paper;
+  }
+  .card-mist {
+    background: var(--color-mist);
+  }
+
+  /* the signature heading: lime marker behind the words */
+  .marker {
+    background: var(--color-lime);
+    border-radius: 14px;
+    padding: 0 0.28em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* primary button — ink pill with lime arrow chip */
+  .btn {
+    @apply inline-flex items-center gap-3 rounded-[14px] border border-line px-6 py-3
+           text-[17px] font-medium transition-transform duration-150;
+    background: var(--color-ink);
+    color: white;
+    box-shadow: 0 3px 0 0 var(--color-line);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 0 var(--color-line);
+  }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 0 var(--color-line);
+  }
+  .btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .btn-lime {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+  .btn-ghost {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1
+           text-[13px] font-medium;
+  }
+
+  .field {
+    @apply w-full rounded-[14px] border border-line bg-paper px-4 py-3 text-[16px]
+           placeholder:text-ink-soft/60;
+  }
+
+  /* stage rows on the processing screen */
+  .stage-row {
+    @apply flex items-center gap-4 rounded-[14px] border border-line bg-paper px-4 py-3;
+  }
+
+  /* ----------------------------------------------------------------
+     App surfaces (authenticated shell). Softer than the marketing
+     hard-shadow cards: hairline borders, gentle elevation, 20px radius.
+  ----------------------------------------------------------------- */
+  .panel {
+    @apply rounded-[20px] border border-line/12 bg-paper;
+    box-shadow: 0 1px 2px rgba(25, 26, 35, 0.05), 0 8px 24px -18px rgba(25, 26, 35, 0.25);
+  }
+  .panel-hover {
+    @apply transition-shadow;
+  }
+  .panel-hover:hover {
+    box-shadow: 0 1px 2px rgba(25, 26, 35, 0.06), 0 14px 32px -18px rgba(25, 26, 35, 0.34);
+  }
+
+  /* sidebar nav scrollbar (dark surface) */
+  .sidebar-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  .sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+  }
+
+  .table-grid {
+    @apply w-full border-collapse text-[14px];
+  }
+  .table-grid th {
+    @apply sticky top-0 z-10 border-b border-line bg-mist px-3 py-2 text-left
+           font-medium whitespace-nowrap;
+  }
+  .table-grid td {
+    @apply border-b border-line/25 px-3 py-2 align-top;
+  }
+}
+
+/* thin ink scrollbar for data panes */
+.scroll-ink::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.scroll-ink::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border-radius: 10px;
+}
+.scroll-ink::-webkit-scrollbar-track {
+  background: var(--color-mist);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- one-time 3D finance entrance (EntranceIntro.tsx) ---- */
+@keyframes intro-coin-spin {
+  0% { transform: rotateX(-18deg) rotateY(0deg) scale(0.6); opacity: 0; }
+  18% { opacity: 1; }
+  60% { transform: rotateX(8deg) rotateY(900deg) scale(1.05); }
+  100% { transform: rotateX(0deg) rotateY(1080deg) scale(1); }
+}
+.intro-coin {
+  animation: intro-coin-spin 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.intro-coin-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@keyframes intro-candle-rise {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+.intro-candle {
+  transform-origin: bottom center;
+  animation: intro-candle-rise 0.7s cubic-bezier(0.3, 0.8, 0.3, 1) both;
+}
+@keyframes intro-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.intro-ticker {
+  animation: intro-ticker 9s linear infinite;
+}
+
+@keyframes pulse-bar {
+  0% { opacity: 0.35; }
+  50% { opacity: 1; }
+  100% { opacity: 0.35; }
+}
+.pulse-text {
+  animation: pulse-bar 1.4s ease-in-out infinite;
+}
