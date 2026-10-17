@@ -50,18 +50,18 @@ export default function EntranceIntro() {
       role="presentation"
       aria-hidden
       onClick={() => setVisible(false)}
-      className={`fixed inset-0 z-[100] flex cursor-pointer flex-col items-center justify-center overflow-hidden bg-ink transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[100] flex cursor-pointer flex-col items-center justify-center overflow-hidden bg-[#251329] transition-opacity duration-700 ${
         leaving ? 'opacity-0' : 'opacity-100'
       }`}
       style={{ perspective: '1400px' }}
     >
       {/* spinning coin */}
       <div className="intro-coin relative size-44" style={{ transformStyle: 'preserve-3d' }}>
-        <div className="intro-coin-face absolute inset-0 grid place-items-center rounded-full border-[6px] border-lime bg-lime text-ink shadow-[0_0_60px_rgba(185,255,102,0.45)]">
+        <div className="intro-coin-face absolute inset-0 grid place-items-center rounded-full border-[6px] border-lime bg-lime text-[#251329] shadow-[0_0_60px_rgba(185,255,102,0.45)]">
           <span className="text-[64px] font-bold">$</span>
         </div>
         <div
-          className="intro-coin-face absolute inset-0 grid place-items-center rounded-full border-[6px] border-lime bg-ink text-lime"
+          className="intro-coin-face absolute inset-0 grid place-items-center rounded-full border-[6px] border-lime bg-lime text-[#251329]"
           style={{ transform: 'rotateY(180deg)' }}
         >
           <svg viewBox="0 0 64 64" className="size-16" aria-hidden>
@@ -101,17 +101,17 @@ export default function EntranceIntro() {
 
       {/* ticker */}
       <div className="mt-10 w-[min(92vw,640px)] overflow-hidden border-y border-paper/15 py-2">
-        <div className="intro-ticker flex w-max gap-10 font-mono text-[13px] tracking-wide text-paper/70 uppercase">
+        <div className="intro-ticker flex w-max gap-10 font-mono text-[13px] tracking-wide text-[#FFF0E2]/70 uppercase">
           {[...TICKER, ...TICKER].map((t, i) => (
             <span key={i}>{t}</span>
           ))}
         </div>
       </div>
 
-      <p className="mt-8 text-[15px] font-medium tracking-[0.2em] text-paper/80 uppercase">
+      <p className="mt-8 text-[15px] font-medium tracking-[0.2em] text-[#FFF0E2]/80 uppercase">
         Aegis · financial intelligence
       </p>
-      <p className="mt-2 text-[12px] text-paper/40">click to skip</p>
+      <p className="mt-2 text-[12px] text-[#FFF0E2]/40">click to skip</p>
     </div>
   )
 }
