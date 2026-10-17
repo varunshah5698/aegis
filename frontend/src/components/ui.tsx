@@ -113,7 +113,7 @@ export function StatCard({
   label,
   value,
   hint,
-  accent = 'bg-ink text-lime',
+  accent = 'bg-lime text-[#251329]',
 }: {
   icon?: LucideIcon
   label: string
