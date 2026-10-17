@@ -75,7 +75,7 @@ export function Panel({
           {Icon && (
             <span
               className={`grid size-9 shrink-0 place-items-center rounded-[10px] ${
-                tone === 'ink' ? 'bg-lime text-ink' : 'bg-ink text-lime'
+                'bg-lime text-[#251329]'
               }`}
             >
               <Icon size={16} aria-hidden />
@@ -214,14 +214,14 @@ export function ChartTooltip({
 }
 
 export const CHART_SERIES = [
-  '#191a23',
-  '#2f8f83',
-  '#8fb8d9',
-  '#e8a33d',
-  '#d4453d',
-  '#7a7b8a',
-  '#a78bfa',
-  '#f472b6',
+  '#FA9D72',
+  '#FFF0E2',
+  '#6F4679',
+  '#C9A6CF',
+  '#8A5A94',
+  '#D6805A',
+  '#4EC9A8',
+  '#E8A33D',
 ]
 
 export function prettify(s: string) {
