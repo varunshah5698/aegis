@@ -18,7 +18,7 @@ import type { ChartSpec } from '../lib/types'
 
 const LIME = '#FA9D72'
 const INK = '#FFF0E2'
-const SERIES = [INK, '#2f8f83', '#8fb8d9', '#e8a33d', '#d4453d', '#7a7b8a']
+const SERIES = ['#FA9D72', '#FFF0E2', '#C9A6CF', '#8A5A94', '#D6805A', '#4EC9A8', '#E8A33D', '#6F4679']
 
 const compact = (v: unknown): string => {
   const n = Number(v)
