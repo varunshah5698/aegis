@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <svg viewBox="0 0 64 64" className="size-6" aria-hidden>
                 <path
                   d="M18 44 L18 20 L44 20"
-                  stroke="#B9FF66"
+                  stroke="#FA9D72"
                   strokeWidth="7"
                   fill="none"
                   strokeLinecap="square"
@@ -137,7 +137,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex items-center gap-3">
               <span className="grid size-10 place-items-center rounded-[12px] bg-lime">
                 <svg viewBox="0 0 64 64" className="size-6" aria-hidden>
-                  <path d="M18 44 L18 20 L44 20" stroke="#191A23" strokeWidth="7" fill="none" />
+                  <path d="M18 44 L18 20 L44 20" stroke="#251329" strokeWidth="7" fill="none" />
                   <circle cx="40" cy="40" r="8" fill="#191A23" />
                 </svg>
               </span>
