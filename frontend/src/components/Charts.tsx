@@ -16,8 +16,8 @@ import {
 import { Info } from 'lucide-react'
 import type { ChartSpec } from '../lib/types'
 
-const LIME = '#B9FF66'
-const INK = '#191A23'
+const LIME = '#FA9D72'
+const INK = '#FFF0E2'
 const SERIES = [INK, '#2f8f83', '#8fb8d9', '#e8a33d', '#d4453d', '#7a7b8a']
 
 const compact = (v: unknown): string => {
@@ -70,11 +70,11 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
           <AreaChart data={spec.data} margin={{ top: 4, right: 8, bottom: 4, left: 8 }}>
             <defs>
               <linearGradient id={`fill-${spec.id}`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#191A23" stopOpacity={0.25} />
-                <stop offset="100%" stopColor="#191A23" stopOpacity={0.02} />
+                <stop offset="0%" stopColor="#FA9D72" stopOpacity={0.25} />
+                <stop offset="100%" stopColor="#FA9D72" stopOpacity={0.02} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#191a2325" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
             <XAxis dataKey={spec.x} tick={{ fontSize: 11 }} minTickGap={28} />
             <YAxis tickFormatter={compact} tick={{ fontSize: 11 }} width={52} />
             <Tooltip content={<InkTooltip />} />
@@ -95,7 +95,7 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
       return (
         <ResponsiveContainer width="100%" height={280}>
           <LineChart data={spec.data} margin={{ top: 4, right: 8, bottom: 4, left: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#191a2325" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
             <XAxis dataKey={spec.x} tick={{ fontSize: 11 }} minTickGap={24} />
             <YAxis tickFormatter={compact} tick={{ fontSize: 11 }} width={52} />
             <Tooltip content={<InkTooltip />} />
@@ -130,7 +130,7 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
       return (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={spec.data} margin={{ top: 4, right: 8, bottom: 4, left: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#191a2325" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
             <XAxis dataKey={spec.x} tick={{ fontSize: 11 }} interval={0} angle={-18} textAnchor="end" height={56} />
             <YAxis tickFormatter={compact} tick={{ fontSize: 11 }} width={52} />
             <Tooltip content={<InkTooltip />} />
@@ -152,7 +152,7 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
       return (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={spec.data} margin={{ top: 4, right: 48, bottom: 4, left: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#191a2325" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
             <XAxis dataKey={spec.x} tick={{ fontSize: 11 }} interval={0} angle={-18} textAnchor="end" height={56} />
             <YAxis yAxisId="left" tickFormatter={compact} tick={{ fontSize: 11 }} width={52} />
             <YAxis yAxisId="right" orientation="right" domain={[0, 100]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 11 }} width={44} />
@@ -183,7 +183,7 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
       return (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={spec.data} margin={{ top: 4, right: 8, bottom: 4, left: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#191a2325" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6f467955" vertical={false} />
             <XAxis
               dataKey={spec.x}
               tick={{ fontSize: 11 }}
@@ -193,7 +193,7 @@ function ChartBody({ spec }: { spec: ChartSpec }) {
               height={spec.data.length > 8 ? 64 : 34}
             />
             <YAxis tickFormatter={compact} tick={{ fontSize: 11 }} width={52} />
-            <Tooltip content={<InkTooltip />} cursor={{ fill: '#B9FF6666' }} />
+            <Tooltip content={<InkTooltip />} cursor={{ fill: '#FA9D7233' }} />
             <Bar dataKey={spec.y} isAnimationActive={false}>
               {spec.data.map((_, i) => (
                 <Cell key={i} fill={i === 0 ? LIME : INK} stroke={INK} strokeWidth={i === 0 ? 1 : 0} />
